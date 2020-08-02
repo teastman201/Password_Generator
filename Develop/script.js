@@ -25,17 +25,26 @@ function writePassword(length) {
       numPass += letters.charAt(Math.floor(Math.random() * letters.length));
   }
 }
-/* 
+
   if (userIncludeSpec) {
     for (let i = 0; i < userPrompt; i++) {
       specPass += specChar.charAt(Math.floor(Math.random() * specChar.length));
     }
   } else {
     for (let i = 0; i < userPrompt; i++) {
-      specPass += numbers.charAt(Math.floor(Math.random() * numbers.length));
+      numPass += letters.charAt(Math.floor(Math.random() * letters.length));
     }
   }
-*/
+
+  if (userIncludeInt) {
+    for (let i = 0; i < userPrompt; i++) {
+      specPass += specChar.charAt(Math.floor(Math.random() * specChar.length));
+    }
+  } else {
+    for (let i = 0; i < userPrompt; i++) {
+      numPass += letters.charAt(Math.floor(Math.random() * letters.length));
+    }
+  }
   
     /*
   if (userIncludeInt) {

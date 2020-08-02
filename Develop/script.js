@@ -4,11 +4,14 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  userSelectInt = window.prompt("Would you like to include integers?");
-  userSelectChar = window.prompt("Would you like to include letters?");
-  userSelectSpec = window.prompt("Would you like to include special characters?");
+  userSelectInt = window.confirm("Would you like to include integers (0123456789)?");
+  userSelectChar = window.confirm("Would you like to include letters (abcdefghijklmnopqrstuvwxyz)?");
+  userSelectSpec = window.confirm("Would you like to include special characters (~`!@#$%^&*().?-_+={}[]|\/:;'<>)?");
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+  if (userSelectInt) = true {
+
+  }
   
 
   passwordText.value = password;

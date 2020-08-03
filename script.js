@@ -8,9 +8,10 @@ function writePassword() {
   let userPrompt = window.prompt("How many characters would you like your password to have (enter number between 8 and 128)");
   
   do {
-    writePassword();
+    userPrompt = window.prompt("How many characters would you like your password to have (enter number between 8 and 128)");
   } 
   while (userPrompt < 8 || userPrompt > 128);  
+
 
 let value = Number(userPrompt);
      
@@ -19,10 +20,7 @@ let value = Number(userPrompt);
   let userIncludeInt = window.confirm("Would you like to include integers (0123456789)?");  
   let userIncludeSpec = window.confirm("Would you like to include special characters (~!@#$%^&*.?-_+={}()[]|\/<>)?");
 
-  if (!userIncludeUpper && !userIncludeLower && !userIncludeInt && !userIncludeSpec ) {
-    window.alert("You must select select at least one option.");
-  }
-
+ 
   var passwordText = document.querySelector("#password");
   var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var lowerCase = 'abcdefghijklmnopqrstuvwxyz';

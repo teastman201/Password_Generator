@@ -8,7 +8,7 @@ let userPrompt = window.prompt("How many characters would you like your password
 let value = Number(userPrompt);
 let min = 8;
 let max = 128;
-function nested(){ 
+function nested(min, max){ 
   for (v = 0; v < min || v > max; v++) {
     window.alert('You must enter a number between 8 and 128.');
   } 
@@ -18,6 +18,10 @@ function nested(){
   let userIncludeLower = window.confirm("Would you like to include lower case letters (abcdefghijklmnopqrstuvwxyz)?");  
   let userIncludeInt = window.confirm("Would you like to include integers (0123456789)?");  
   let userIncludeSpec = window.confirm("Would you like to include special characters (~!@#$%^&*.?-_+={}()[]|\/<>)?");
+
+  if (!userIncludeUpper && !userIncludeLower && !userIncludeInt && !userIncludeSpec ) {
+    window.alert("You must select select at least one option.");
+  }
 
   var passwordText = document.querySelector("#password");
   var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -42,7 +46,7 @@ function nested(){
   if (userIncludeSpec) {
     possible += specChar;
   }
-
+  
   for (let i = 0; i < userPrompt; i++) {
     userPass += possible.charAt(Math.floor(Math.random() * possible.length));
   }  

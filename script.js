@@ -12,15 +12,22 @@ function writePassword() {
   } 
   while (userPrompt < 8 || userPrompt > 128);  
 
+  let value = Number(userPrompt);
 
-let value = Number(userPrompt);
-     
   let userIncludeUpper = window.confirm("Would you like to include upper case letters (ABCDEFGHIJKLMNOPQRSTUVWXYZ)?");  
   let userIncludeLower = window.confirm("Would you like to include lower case letters (abcdefghijklmnopqrstuvwxyz)?");  
   let userIncludeInt = window.confirm("Would you like to include integers (0123456789)?");  
   let userIncludeSpec = window.confirm("Would you like to include special characters (~!@#$%^&*.?-_+={}()[]|\/<>)?");
+     
+  do {
+    window.alert("You must select at least one category.");
+    userIncludeUpper = window.confirm("Would you like to include upper case letters (ABCDEFGHIJKLMNOPQRSTUVWXYZ)?");
+    userIncludeLower = window.confirm("Would you like to include lower case letters (abcdefghijklmnopqrstuvwxyz)?");
+    userIncludeInt = window.confirm("Would you like to include integers (0123456789)?");
+    userIncludeSpec = window.confirm("Would you like to include special characters (~!@#$%^&*.?-_+={}()[]|\/<>)?");
+  } 
+  while (!userIncludeUpper && !userIncludeLower && !userIncludeInt && !userIncludeSpec);
 
- 
   var passwordText = document.querySelector("#password");
   var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var lowerCase = 'abcdefghijklmnopqrstuvwxyz';

@@ -4,12 +4,20 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-
-  userPrompt = window.prompt("How many characters would you like your password to have (enter number between 8 and 128)");
-  userIncludeUpper = window.confirm("Would you like to include upper case letters (ABCDEFGHIJKLMNOPQRSTUVWXYZ)?");  
-  userIncludeLower = window.confirm("Would you like to include lower case letters (abcdefghijklmnopqrstuvwxyz)?");  
-  userIncludeInt = window.confirm("Would you like to include integers (0123456789)?");  
-  userIncludeSpec = window.confirm("Would you like to include special characters (~!@#$%^&*.?-_+={}()[]|\/<>)?");
+let userPrompt = window.prompt("How many characters would you like your password to have (enter number between 8 and 128)");
+let value = Number(userPrompt);
+let min = 8;
+let max = 128;
+function nested(){ 
+  for (v = 0; v < min || v > max; v++) {
+    window.alert('You must enter a number between 8 and 128.');
+  } 
+} 
+     
+  let userIncludeUpper = window.confirm("Would you like to include upper case letters (ABCDEFGHIJKLMNOPQRSTUVWXYZ)?");  
+  let userIncludeLower = window.confirm("Would you like to include lower case letters (abcdefghijklmnopqrstuvwxyz)?");  
+  let userIncludeInt = window.confirm("Would you like to include integers (0123456789)?");  
+  let userIncludeSpec = window.confirm("Would you like to include special characters (~!@#$%^&*.?-_+={}()[]|\/<>)?");
 
   var passwordText = document.querySelector("#password");
   var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -19,7 +27,7 @@ function writePassword() {
   var possible = '';
   
   let userPass = '';
-
+  
   if (userIncludeUpper) {
     possible += upperCase;
   }

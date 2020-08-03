@@ -4,15 +4,15 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-let userPrompt = window.prompt("How many characters would you like your password to have (enter number between 8 and 128)");
-let value = Number(userPrompt);
-let min = 8;
-let max = 128;
-function nested(min, max){ 
-  for (v = 0; v < min || v > max; v++) {
-    window.alert('You must enter a number between 8 and 128.');
+
+  let userPrompt = window.prompt("How many characters would you like your password to have (enter number between 8 and 128)");
+  
+  do {
+    writePassword();
   } 
-} 
+  while (userPrompt < 8 || userPrompt > 128);  
+
+let value = Number(userPrompt);
      
   let userIncludeUpper = window.confirm("Would you like to include upper case letters (ABCDEFGHIJKLMNOPQRSTUVWXYZ)?");  
   let userIncludeLower = window.confirm("Would you like to include lower case letters (abcdefghijklmnopqrstuvwxyz)?");  
